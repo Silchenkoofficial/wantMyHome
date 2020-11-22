@@ -1,0 +1,180 @@
+// out: ./../css/main.min.css, compress: true
+
+@import '__colors.less';
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    color: @brown;
+}
+
+p {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    .sidebar {
+        width: 60px;
+        background-color: @gold;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        ul {
+            margin: 63px 0;
+            transform: rotate(180deg);
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+    
+            writing-mode: vertical-lr;
+            li {
+                white-space: nowrap;
+                margin-bottom: 40px;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .social {
+            &--item {
+                margin-bottom: 10px;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.35);
+                }
+                &:last-child {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .mail-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: @brown;
+            svg {
+                path {
+                    fill: @gold;
+                }
+            }
+        }
+    }
+    .main {
+        width: 100%;
+        position: relative;
+        .green-block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -10;
+            width: 35%;
+            height: 54%;
+            background-color: @green;
+        }
+        .header {
+            padding: 40px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &__logo {
+                text-align: center;
+                font-family: "Russo One", sans-serif;
+                h1 {
+                    font-size: 28px;
+                    line-height: 34px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+            &__menu {
+                ul {
+                    display: flex;
+                    li {
+                        font-weight: bold;
+                        margin-right: 30px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            &__phone {
+                a {
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+            }
+        }
+        &__content {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            &--left {
+                padding: 95px;
+                // height: 450px;
+                background: url('./../images/main-bg.png') no-repeat center / cover;
+                p {
+                    margin-top: 26px;
+                    font-weight: normal;
+                }
+                .btn {
+                    margin-top: 83px;
+                    display: inline-block;
+                    padding: 15px 25px;
+                    background-color: @gold;
+                    color: @brown;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1100px) {
+    .wrapper {
+        .content {
+            .header {
+                &__menu {
+                    display: none;
+                }
+            }
+        }
+    }
+}
